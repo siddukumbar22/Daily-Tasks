@@ -1,11 +1,10 @@
 package com.toturesdude.crud.Bike;
 
-public class BikeStorage {
-
+public class Bikespare {
     String [] Bikes = new String[5];
 
     public void addBike(String Name){
-        if (Name!= null && Name.length()> 4){
+        if (Name!= null && Name.length()> 2){
 
             for (int i = 0; i < Bikes.length; i++) {
                 if (Bikes[i] == null){
@@ -29,6 +28,13 @@ public class BikeStorage {
         }
 
     }
+
+
+
+    public String[] readAll (){
+        return Bikes;
+    }
+
     public boolean update(String oldvalue,String newvalue){
         if (oldvalue!=null && newvalue!=null){
             for (int i = 0; i < Bikes.length; i++) {
@@ -46,29 +52,23 @@ public class BikeStorage {
         return false;
     }
 
+    public boolean find(String names){
+        if (names!=null) {
+            for (int i = 0; i < Bikes.length; i++) {
+                if (names.equals(Bikes[i])) {
+                    System.out.println("Bike Found");
+                    return true;
+                }
+            }
+            System.out.println("bike not found");
+            return false;
+        }
+        else {
+            System.out.println("Input not valid");
+            return false;
 
 
-    public String[] readAll (){
-        return Bikes;
+        }
     }
-
-   public boolean find(String name){
-       if (name!=null) {
-           for (int i = 0; i < Bikes.length; i++) {
-               if (name.equals(Bikes[i])) {
-                   System.out.println("Bike Found");
-                   return true;
-               }
-           }
-           System.out.println("bike not found");
-           return false;
-       }
-       else {
-           System.out.println("Input not valid");
-           return false;
-       }
-   }
 }
-
-
 
