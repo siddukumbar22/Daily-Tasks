@@ -21,16 +21,35 @@ public class BikeRunner {
 
         for (int i = 0; i < bikes.length; i++) {
             System.out.println(bikes[i]);
+        }
+        boolean result = bikeStorage.find("splendor");
+        System.out.println(result);
+
+
+
+
+        String[]bikes1 = bikeStorage.readAll();
+
+        for (int i = 0; i < bikes1.length; i++) {
+            System.out.println(bikes1[i]);
+        }
+        boolean result1 = bikeStorage.update("ninja" , "zx");
+        System.out.println(result1);
+
+
+
+        String[]bikes2 = bikeStorage.readAll();
+
+        for (int i = 0; i < bikes2.length; i++) {
+            System.out.println(bikes2[i]);
 
         }
-
-        boolean result = bikeStorage.find("ninja");
-
-        boolean results = bikeStorage.update("ninja" , "zx");
-
-        System.out.println(results);
+        boolean result2 = bikeStorage.delete("unicorn");
+        System.out.println(result2);
+        
+        }
     }
-    }
+
 
 
 

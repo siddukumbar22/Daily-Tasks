@@ -29,6 +29,24 @@ public class BikeStorage {
         }
 
     }
+
+    public boolean delete(String value){
+        if (value!=null  ){
+            for (int i = 0; i < Bikes.length; i++) {
+                if (Bikes[i].equals(value)){
+                    Bikes[i] = null;
+                    return true;
+                }
+
+            }
+            System.out.println("the value is not found");
+        }
+        else {
+            System.out.println("input are valid");
+        }
+        return false;
+    }
+
     public boolean update(String oldvalue,String newvalue){
         if (oldvalue!=null && newvalue!=null){
             for (int i = 0; i < Bikes.length; i++) {
@@ -47,13 +65,15 @@ public class BikeStorage {
     }
 
 
-
     public String[] readAll (){
+
         return Bikes;
     }
 
+
+
    public boolean find(String name){
-       if (name!=null) {
+        if (name!=null) {
            for (int i = 0; i < Bikes.length; i++) {
                if (name.equals(Bikes[i])) {
                    System.out.println("Bike Found");
@@ -67,6 +87,7 @@ public class BikeStorage {
            System.out.println("Input not valid");
            return false;
        }
+
    }
 }
 
